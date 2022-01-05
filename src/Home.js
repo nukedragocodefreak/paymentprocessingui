@@ -4,15 +4,13 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <h2>HELLO</h2>
-        <p>Cras facilisis urna ornare ex volutpat, et
-        convallis erat elementum. Ut aliquam, ipsum vitae
-        gravida suscipit, metus dui bibendum est, eget rhoncus nibh
-        metus nec massa. Maecenas hendrerit laoreet augue
-        nec molestie. Cum sociis natoque penatibus et magnis
-        dis parturient montes, nascetur ridiculus mus.</p>
- 
-        <p>Duis a turpis sed lacus dapibus elementum sed eu lectus.</p>
+        <h2>Payment Processing Platform</h2>
+        <p>Design a platform to complete this process at a very simplistic level. This should contain a
+form / page whereby a user can capture all the information in 1., upload 2 and 3 and save.
+All the information saved should be stored in a database allowing the manager to access a
+separate form/page once saved to review the payment requisition and sign off on this. By
+pressing sign the cover page should be created in pdf reflecting all the captured information
+together with manager’s pre-stored signature.</p>
       </div>
     );
   }
