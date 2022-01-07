@@ -36,7 +36,7 @@ ul.header li a {
 .active {
   background-color: #0099FF;
 }
-input[type=text], select,input[type=date] {
+input[type=text], select,input[type=date], input[type=number] {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
