@@ -1,5 +1,7 @@
 import React, { Component, useRef } from "react";
 import SignaturePad from 'react-signature-canvas'
+import Notifications, {notify} from 'react-notify-toast';
+
 class Employee extends Component {
 
   constructor(props) {
@@ -9,7 +11,7 @@ class Employee extends Component {
      departments: [],
      positions: [],
      sigPad: {},
-     DataURL: "test"
+     DataURL: "dataurl"
     }; 
   }
   
@@ -39,7 +41,7 @@ class Employee extends Component {
   }
   createSignature = () => {   
    this.DataURL = this.sigPad.toDataURL()
-   document.getElementById("no").value = this.DataURL;
+   document.getElementById("imagedataurl").value = this.DataURL;
   }
 
   onFormSubmit(e) {
@@ -49,9 +51,8 @@ class Employee extends Component {
     const firstname= e.target.firstname.value;
     const lastname= e.target.lastname.value;
     const position= e.target.position.value;
-    const signature= e.target.no.value;
-    //  console.log('Password:', bankname);
-   // console.log(this.sigPad.getSignaturePad());
+    const signature= e.target.imagedataurl.value;
+
     const myObject = {
       employeeCode: empcode,
       firstName: firstname,
@@ -60,22 +61,38 @@ class Employee extends Component {
       position: position,
       signature: signature
   };
-  //console.log('Password:', myObject);
+
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(myObject)
   };
-  fetch('https://localhost:44398/Employee', requestOptions)
-    .then(response => response.json())
-    .then(data => console.log(data));
-    e.preventDefault();
+   fetch('https://localhost:44398/Employee', requestOptions)
+    .then(response => {
+      if(response.status == 200){
+        notify.show('Employee Details saved successfully ', 'success');
+      }
+      else
+      {
+        notify.show('Failed to save Employee Details  : ' + response.status, 'error');
+      }
+    });
+    //clear form
+     e.target.department.value = 'Select Department';
+     e.target.empcode.value = '';
+     e.target.firstname.value = '';
+     e.target.lastname.value = '';
+     e.target.position.value = 'Select Position';
+     e.target.imagedataurl.value = '';
+     clear();
+     e.preventDefault();
   };
   render() { 
        
     return (
       
       <div>
+         <Notifications />
       <h2>Add Employee</h2>
        <br/>
       <form onSubmit={ this.onFormSubmit }>
@@ -92,7 +109,7 @@ class Employee extends Component {
        <label htmlFor="EmployeeCode"><b>Employee Code</b></label>
       <input type="text" placeholder="Enter Employee Code" name="empcode" id="empcode" required/>
     
-      <input type="text" placeholder="Enter no" name="no" id="no" required/>
+      <input type="hidden" placeholder="" name="imagedataurl" id="imagedataurl" required/>
       <label htmlFor="FirstName"><b>FirstName</b></label>
       <input type="text" placeholder="Enter FirstName" name="firstname" id="firstname" required/>
 
@@ -102,7 +119,7 @@ class Employee extends Component {
       <label htmlFor="Position"><b>Position</b></label>
 
        <select name="position" id="position">
-         <option>Select position</option>
+         <option>Select Position</option>
                 {
                  this.state.positions.map((obj, key) => {
                      return <option key={key} value={obj.positionID}>{obj.positionName}</option>

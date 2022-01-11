@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- 
+import Notifications, {notify} from 'react-notify-toast';
 class BankDetail extends Component {
   
   state = {
@@ -48,20 +48,34 @@ const requestOptions = {
   body: JSON.stringify(myObject)
 };
 fetch('https://localhost:44398/BankDetail', requestOptions)
-  .then(response => response.json())
-  .then(data => console.log(data));
-  e.preventDefault();
+.then(response => {
+  if(response.status == 200){
+    notify.show('Bank Details saved successfully ', 'success');
+  }
+  else
+  {
+    notify.show('Failed to save Bank Details : ' + response.status, 'error');
+  }
+});
+//clear form
+ e.target.bankname.value = 'Select Bank';
+ e.target.branchname.value = '';
+ e.target.branchcode.value = '';
+ e.target.accountnumber.value = '';
+ e.target.company.value = 'Select Company';
+ e.preventDefault();
 };
   render() {
     return (
       
-      <div>            
+      <div> 
+         <Notifications />           
         <h2>Add Bank Details</h2>
          <br/>
         <form onSubmit={ this.onFormSubmit }>
         <label htmlFor="BankName"><b> Bank Name</b></label>
          <select name="bankname" id="bankname">
-         <option>Select bank</option>
+         <option>Select Bank</option>
                 {
                  this.state.banks.map((obj, key) => {
                      return <option key={key} value={obj.bankID}>{obj.bankName}</option>

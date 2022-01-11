@@ -4,13 +4,9 @@ class CoverSheet extends Component {
   render() {
     return (
       <div>
-              <h2>Process Payment</h2>
-      <button className="button">CoverSheet</button>
-      <button className="button button2">Upload Invoice</button>
-      <button className="button button3">Red</button>
+      <h2>Process Payment</h2>
        <br/>
       <form>
-      <div className="hidden">
       <label htmlFor="FirstName"><b>FirstName</b></label>
       <input type="text" placeholder="Enter FirstName" name="firstname" required/>
 
@@ -31,7 +27,6 @@ class CoverSheet extends Component {
        <select>
          <option>Select Manager</option>
        </select>
-       </div>
      <b><label htmlFor="myfile">Upload an Invoice:</label></b>
       <input type="file" id="myfile" name="myfile" />
       <br/> <br/>

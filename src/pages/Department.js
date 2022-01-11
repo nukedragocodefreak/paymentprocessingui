@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- 
+import Notifications, {notify} from 'react-notify-toast';
 class Department extends Component {
 
   onFormSubmit(e) {
@@ -15,13 +15,23 @@ class Department extends Component {
     body: JSON.stringify(myObject)
   };
   fetch('https://localhost:44398/Department', requestOptions)
-    .then(response => response.json())
-    .then(data => console.log(data));
-    e.preventDefault();
-  };
+  .then(response => {
+    if(response.status == 200){
+      notify.show('Department Details saved successfully ', 'success');
+    }
+    else
+    {
+      notify.show('Failed to saveDepartment Details : ' + response.status, 'error');
+    }
+  });
+  //clear form
+   e.target.department.value = '';
+   e.preventDefault();
+};
   render() {
     return (
       <div>
+         <Notifications />
         <h2>Add Departments</h2>
          <br/>
         <form onSubmit={ this.onFormSubmit }>

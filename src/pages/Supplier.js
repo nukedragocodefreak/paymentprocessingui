@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- 
+import Notifications, {notify} from 'react-notify-toast';
 class Supplier extends Component {
   onFormSubmit(e) {
     const name= e.target.name.value;
@@ -19,21 +19,34 @@ class Supplier extends Component {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(myObject)
   };
-  fetch('https://localhost:44398/Company', requestOptions)
-    .then(response => response.json())
-    .then(data => console.log(data));
-    e.preventDefault();
-  };
+  fetch('https://localhost:44398/Supplier', requestOptions)
+  .then(response => {
+    if(response.status == 200){
+      notify.show('Supplier Details saved successfully ', 'success');
+    }
+    else
+    {
+      notify.show('Failed to save Supplier Details : ' + response.status, 'error');
+    }
+  });
+  //clear form
+   e.target.name.value = '';
+   e.target.email.value = '';
+   e.target.address.value = '';
+   e.target.phones.value = '';
+   e.preventDefault();
+};
   render() {
     return (
       <div>
+         <Notifications />
       <h2>Add Supplier Details</h2>
       <br/>
       <form onSubmit={ this.onFormSubmit }>
       
       <label htmlFor="name"><b>Name</b></label>
        <input type="text" placeholder="Enter Name" name="name" required/>
-               <label for="email"><b>Email</b></label>
+               <label htmlFor="email"><b>Email</b></label>
        <input type="text" placeholder="Enter Email" name="email" required/>
 
        <label htmlFor="psw"><b>Address</b></label>

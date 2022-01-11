@@ -1,5 +1,5 @@
 import React, { Component } from "react";
- 
+import Notifications, {notify} from 'react-notify-toast';
 class Invoice extends Component {
   render() {
     return (
@@ -11,8 +11,8 @@ class Invoice extends Component {
        <select>
          <option>Select bank</option>
        </select>
-      <label for="BranchCode"><b>Branch Code</b></label>
-      <input type="text" placeholder="Enter Branch Code" name="branchcode" required/>
+      <label for="BranchCode"><b>Ulpoad File</b></label>
+      <input type="file" placeholder="Enter Branch Code" name="branchcode" required/>
 
       <label for="AccountNumber"><b>Account Number</b></label>
       <input type="text" placeholder="Enter AccountNumber" name="accountnumber" required/>
