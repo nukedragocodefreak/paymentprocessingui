@@ -40,20 +40,20 @@ class Supplier extends Component {
     return (
       <div>
          <Notifications />
-      <h2>Add Supplier Details</h2>
+      <h3>Add Supplier Details</h3>
       <br/>
       <form onSubmit={ this.onFormSubmit }>
       
-      <label htmlFor="name"><b>Name</b></label>
-       <input type="text" placeholder="Enter Name" name="name" required/>
-               <label htmlFor="email"><b>Email</b></label>
-       <input type="text" placeholder="Enter Email" name="email" required/>
+      <label htmlFor="name"><b>Name</b></label> <br/>
+       <input type="text" placeholder="Enter Name" name="name" required/> <br/>
+               <label htmlFor="email"><b>Email</b></label> <br/>
+       <input type="text" placeholder="Enter Email" name="email" required/> <br/>
 
-       <label htmlFor="psw"><b>Address</b></label>
-       <input type="text" placeholder="Enter Address" name="address" required/>
+       <label htmlFor="psw"><b>Address</b></label> <br/>
+       <input type="text" placeholder="Enter Address" name="address" required/> <br/>
 
-       <label htmlFor="psw-repeat"><b>Phone numbers</b></label>
-       <input type="text" placeholder="Enter Phone numbers" name="phones" required></input>
+       <label htmlFor="psw-repeat"><b>Phone numbers</b></label> <br/>
+       <input type="text" placeholder="Enter Phone numbers" name="phones" required></input> <br/>
 
 
        <div className="clearfix">

@@ -9,6 +9,7 @@ import Company from "./pages/Company";
 import BankDetail from "./pages/BankDetail";
 import Department from "./pages/Department";
 import CoverSheet from "./pages/CoverSheet";
+import ViewCoverSheet from "./pages/ViewCoverSheet";
 import Employee from "./pages/Employee";
 import Invoice from "./pages/Invoice";
 import Supplier from "./pages/Supplier";
@@ -19,7 +20,7 @@ class Main extends Component {
     return (
       <HashRouter>
         <div>
-          <h1>Payment Processing Platform</h1>
+          <h2>Payment Processing Platform</h2>
           <ul className="header" style={{ width:'150px', float:'left' }}>
             <li><NavLink exact to="/">Welcome</NavLink></li>
             <li><NavLink to="/Company">Company</NavLink></li>
@@ -28,6 +29,8 @@ class Main extends Component {
             <li><NavLink to="/Employee">Employee</NavLink></li>
             <li><NavLink to="/Supplier">Supplier</NavLink></li>
             <li><NavLink to="/CoverSheet">Cover sheet</NavLink></li>
+            <li><NavLink to="/ViewCoverSheet">View Coversheet</NavLink></li>
+
 
           </ul>
           
@@ -40,6 +43,7 @@ class Main extends Component {
             <Route path="/Invoice" component={Invoice}/>
             <Route path="/Supplier" component={Supplier}/>
             <Route path="/CoverSheet" component={CoverSheet}/>
+            <Route path="/ViewCoverSheet" component={ViewCoverSheet}/>
           </div>
           </div>
       </HashRouter>

@@ -93,10 +93,10 @@ class Employee extends Component {
       
       <div>
          <Notifications />
-      <h2>Add Employee</h2>
+      <h3>Add Employee</h3>
        <br/>
       <form onSubmit={ this.onFormSubmit }>
-      <label htmlFor="department"><b>Department</b></label>
+      <label htmlFor="department"><b>Department</b></label> <br/>
       <select name="department" id="department">
          <option>Select Department</option>
                 {
@@ -105,19 +105,19 @@ class Employee extends Component {
                     
                  })
               }</select>
-
-       <label htmlFor="EmployeeCode"><b>Employee Code</b></label>
-      <input type="text" placeholder="Enter Employee Code" name="empcode" id="empcode" required/>
+ <br/>
+       <label htmlFor="EmployeeCode"><b>Employee Code</b></label> <br/>
+      <input type="text" placeholder="Enter Employee Code" name="empcode" id="empcode" required/> <br/>
     
-      <input type="hidden" placeholder="" name="imagedataurl" id="imagedataurl" required/>
-      <label htmlFor="FirstName"><b>FirstName</b></label>
-      <input type="text" placeholder="Enter FirstName" name="firstname" id="firstname" required/>
+      <input type="hidden" placeholder="" name="imagedataurl" id="imagedataurl" required/> <br/>
+      <label htmlFor="FirstName"><b>FirstName</b></label> <br/>
+      <input type="text" placeholder="Enter FirstName" name="firstname" id="firstname" required/> <br/>
 
-      <label htmlFor="LastName"><b>LastName</b></label>
-      <input type="text" placeholder="Enter LastName" name="lastname" id="lastname" required/>
+      <label htmlFor="LastName"><b>LastName</b></label> <br/>
+      <input type="text" placeholder="Enter LastName" name="lastname" id="lastname" required/> <br/>
 
       <label htmlFor="Position"><b>Position</b></label>
-
+      <br/>
        <select name="position" id="position">
          <option>Select Position</option>
                 {
@@ -126,7 +126,7 @@ class Employee extends Component {
                     
                  })
               }</select>
-
+ <br/>
       <label htmlFor="Signature"><b>Signature</b></label>
       <br/>
       <SignaturePad penColor='black' canvasProps={{ width: 546, height: 200, className: 'sig-canvas' }} ref={(ref) => { this.sigPad = ref }} />

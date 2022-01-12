@@ -32,11 +32,11 @@ class Department extends Component {
     return (
       <div>
          <Notifications />
-        <h2>Add Departments</h2>
+        <h3>Add Departments</h3>
          <br/>
         <form onSubmit={ this.onFormSubmit }>
        
-        <label htmlFor="Department"><b>Department name</b></label>
+        <label htmlFor="Department"><b>Department name</b></label> <br/>
         <input type="text" placeholder="Enter Department Name" name="department" id="department"  required/>
         <div className="clearfix">
           <button type="submit" className="savebtn">Save</button>

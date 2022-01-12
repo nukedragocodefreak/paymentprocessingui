@@ -36,8 +36,8 @@ ul.header li a {
 .active {
   background-color: #0099FF;
 }
-input[type=text], select,input[type=date], input[type=number] {
-  width: 100%;
+input[type=text], select,input[type=date], input[type=number], input[type=file] {
+  width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -47,7 +47,7 @@ input[type=text], select,input[type=date], input[type=number] {
 }
 
 input[type=submit], .savebtn {
-  width: 100%;
+  width: 50%;
   background-color: #0099FF;
   color: white;
   padding: 14px 20px;
@@ -82,5 +82,4 @@ div {
 .button3 {background-color: #f44336;} /* Red */ 
 .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
 .button5 {background-color: #555555;} /* Black */
-
 .hidden { display:none; }

@@ -70,10 +70,10 @@ fetch('https://localhost:44398/BankDetail', requestOptions)
       
       <div> 
          <Notifications />           
-        <h2>Add Bank Details</h2>
+        <h3>Add Bank Details</h3>
          <br/>
         <form onSubmit={ this.onFormSubmit }>
-        <label htmlFor="BankName"><b> Bank Name</b></label>
+        <label htmlFor="BankName"><b> Bank Name</b></label> <br/>
          <select name="bankname" id="bankname">
          <option>Select Bank</option>
                 {
@@ -82,8 +82,8 @@ fetch('https://localhost:44398/BankDetail', requestOptions)
                     
                  })
               }</select>
-
-      <label htmlFor="Company"><b> Company Name</b></label> 
+ <br/>
+      <label htmlFor="Company"><b> Company Name</b></label>  <br/>
         <select name="company" id="company">
          <option>Select Company</option>
                 {
@@ -92,15 +92,15 @@ fetch('https://localhost:44398/BankDetail', requestOptions)
                     
                  })
               }</select> 
+ <br/>
+         <label htmlFor="BankName"><b> Branch Name</b></label> <br/>
+         <input type="text" placeholder="Enter Branch Name" name="branchname"  id="branchname" required/> <br/>
 
-         <label htmlFor="BankName"><b> Branch Name</b></label>
-         <input type="text" placeholder="Enter Branch Name" name="branchname"  id="branchname" required/>
+        <label htmlFor="BranchCode"><b>Branch Code</b></label> <br/>
+        <input type="number" placeholder="Enter Branch Code" name="branchcode" id="branchcode" required/> <br/>
 
-        <label htmlFor="BranchCode"><b>Branch Code</b></label>
-        <input type="number" placeholder="Enter Branch Code" name="branchcode" id="branchcode" required/>
-
-        <label htmlFor="AccountNumber"><b>Account Number</b></label>
-        <input type="number" placeholder="Enter AccountNumber" name="accountnumber" id="accountnumber" required/>
+        <label htmlFor="AccountNumber"><b>Account Number</b></label> <br/>
+        <input type="number" placeholder="Enter AccountNumber" name="accountnumber" id="accountnumber" required/> <br/>
 
         <div className="clearfix">
           <button type="submit" className="savebtn">Save</button>
