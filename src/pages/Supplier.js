@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Notifications, {notify} from 'react-notify-toast';
+import {SERVER_URL} from '../Constants/Constants';
+
 class Supplier extends Component {
   onFormSubmit(e) {
     const name= e.target.name.value;
@@ -19,7 +21,7 @@ class Supplier extends Component {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(myObject)
   };
-  fetch('https://localhost:44398/Supplier', requestOptions)
+  fetch(SERVER_URL+'/Supplier', requestOptions)
   .then(response => {
     if(response.status == 200){
       notify.show('Supplier Details saved successfully ', 'success');

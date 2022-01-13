@@ -1,6 +1,7 @@
 import React, { Component, useRef } from "react";
 import SignaturePad from 'react-signature-canvas'
 import Notifications, {notify} from 'react-notify-toast';
+import {SERVER_URL} from '../Constants/Constants';
 
 class Employee extends Component {
 
@@ -16,7 +17,7 @@ class Employee extends Component {
   }
   
   componentDidMount() {
-    fetch('https://localhost:44398/Department/GetDepartments')
+    fetch(SERVER_URL+'/Department/GetDepartments')
      .then(function(res) {
          return res.json();
      }).then((json)=> {
@@ -25,7 +26,7 @@ class Employee extends Component {
          })
      });
   
-     fetch('https://localhost:44398/Employee/GetPositions')
+     fetch(SERVER_URL+'/Employee/GetPositions')
      .then(function(res) {
          return res.json();
      }).then((json)=> {

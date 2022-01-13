@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import $ from 'jquery';
+import {SERVER_URL} from '../Constants/Constants';
  
 class CoverSheet extends Component {
 
@@ -9,7 +10,7 @@ class CoverSheet extends Component {
     suppliers: []
 }
 componentDidMount() {
-  fetch('https://localhost:44398/Department/GetDepartments')
+  fetch(SERVER_URL+'/Department/GetDepartments')
    .then(function(res) {
        return res.json();
    }).then((json)=> {
@@ -18,7 +19,7 @@ componentDidMount() {
        })
    });
 
-   fetch('https://localhost:44398/Employee/GetEmployees')
+   fetch(SERVER_URL+'/Employee/GetEmployees')
    .then(function(res) {
        return res.json();
    }).then((json)=> {
@@ -27,7 +28,7 @@ componentDidMount() {
        })
    });
 
-   fetch('https://localhost:44398/Supplier/GetSupplier')
+   fetch(SERVER_URL+'/Supplier/GetSupplier')
    .then(function(res) {
        return res.json();
    }).then((json)=> {

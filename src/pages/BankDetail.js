@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Notifications, {notify} from 'react-notify-toast';
+import {SERVER_URL} from '../Constants/Constants';
+
 class BankDetail extends Component {
   
   state = {
@@ -7,7 +9,7 @@ class BankDetail extends Component {
     companies: []
 }
 componentDidMount() {
-  fetch('https://localhost:44398/BankDetail/GetBanks')
+  fetch(SERVER_URL+'/BankDetail/GetBanks')
    .then(function(res) {
        return res.json();
    }).then((json)=> {
@@ -16,7 +18,7 @@ componentDidMount() {
        })
    });
 
-   fetch('https://localhost:44398/Company/GetCompany')
+   fetch(SERVER_URL+'/Company/GetCompany')
    .then(function(res) {
        return res.json();
    }).then((json)=> {
@@ -47,7 +49,7 @@ const requestOptions = {
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(myObject)
 };
-fetch('https://localhost:44398/BankDetail', requestOptions)
+fetch(SERVER_URL+'/BankDetail', requestOptions)
 .then(response => {
   if(response.status == 200){
     notify.show('Bank Details saved successfully ', 'success');

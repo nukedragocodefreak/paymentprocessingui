@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import {SERVER_URL} from '../Constants/Constants';
  
 class ViewCoverSheet extends Component {
   state = {
     coversheet: []
 }
 componentDidMount() {
-  fetch('https://localhost:44398/CoverSheet/GetCoverSheet')
+  fetch(SERVER_URL+'/CoverSheet/GetCoverSheet')
    .then(function(res) {
        return res.json();
    }).then((json)=> {
@@ -19,12 +20,14 @@ componentDidMount() {
   render() {
     return (
       <div>
-      <tbody>
+      <tbody id="customers">
           <tr>
-            <th>Name</th>
-            <th>Last Name</th>
-            <th>Age</th>
-            <th>Occupation</th>
+            <th>coverSheetID</th>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>dateOfInvoce</th>
+            <th>Transaction Status</th>
+            <th>Manage</th>
           </tr>
           {this.state.coversheet.map((item, i) => (
             <tr key={i}>
@@ -32,6 +35,10 @@ componentDidMount() {
               <td>{item.firstName}</td>
               <td>{item.lastName}</td>
               <td>{item.dateOfInvoce}</td>
+              <td>{item.fK_PaymentStatusID}</td>
+              <td><button type="button" className="button button2">Edit</button>
+                 <button type="button" className="button">View</button>
+              </td>
             </tr>
           ))}
     </tbody>

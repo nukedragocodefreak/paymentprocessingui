@@ -1,5 +1,5 @@
 body {
-  background-color: #e7e8f0;
+  background-color: rgb(128, 112, 139);
   padding: 20px;
   margin: 0;
 }
@@ -23,7 +23,7 @@ ul.header li a {
   display: inline-block;
 }
 .content {
-  background-color: #f0f0e7;
+  background-color: #FFF;
   padding: 20px;
 }
 .content h2 {
@@ -36,8 +36,8 @@ ul.header li a {
 .active {
   background-color: #0099FF;
 }
-input[type=text], select,input[type=date], input[type=number], input[type=file] {
-  width: 50%;
+input[type=text], select,input[type=date], input[type=number], input[type=file], input[type=password] {
+  width: 30%;
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
@@ -47,7 +47,7 @@ input[type=text], select,input[type=date], input[type=number], input[type=file] 
 }
 
 input[type=submit], .savebtn {
-  width: 50%;
+  width: 30%;
   background-color: #0099FF;
   color: white;
   padding: 14px 20px;
@@ -63,8 +63,9 @@ input[type=submit]:hover {
 
 div {
   border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
+  background-color: #FFF;
+  padding: 10px;
+  
 }
 .button {
   background-color: #4CAF50; /* Green */
@@ -83,3 +84,36 @@ div {
 .button4 {background-color: #e7e7e7; color: black;} /* Gray */ 
 .button5 {background-color: #555555;} /* Black */
 .hidden { display:none; }
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #008CBA;
+  color: white;
+}
+@media all and (min-width: 480px) {
+  .Login {
+    padding: 60px 0;
+  }
+
+  .Login form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+}

@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Notifications, {notify} from 'react-notify-toast';
+import {SERVER_URL} from '../Constants/Constants';
+
 class Company extends Component {
   
   onFormSubmit(e) {
@@ -20,7 +22,7 @@ class Company extends Component {
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(myObject)
   };
-  fetch('https://localhost:44398/Company', requestOptions)
+  fetch(SERVER_URL+'/Company', requestOptions)
   .then(response => {
     if(response.status == 200){
       notify.show('Company Details saved successfully ', 'success');
