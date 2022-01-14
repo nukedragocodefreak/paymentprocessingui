@@ -13,16 +13,18 @@ import ViewCoverSheet from "./pages/ViewCoverSheet";
 import Employee from "./pages/Employee";
 import Invoice from "./pages/Invoice";
 import Supplier from "./pages/Supplier";
+import Login from "./Login/Login"
 
 
 class Main extends Component {
   render() {
     return (
       <HashRouter>
-        <div>
+        <div id="test">
           <h2>Payment Processing Platform</h2>
           <ul className="header" style={{ width:'150px', float:'left' }}>
-            <li><NavLink exact to="/">Welcome</NavLink></li>
+            <li><NavLink exact to="/">Login</NavLink></li>
+            <li><NavLink to="/Home">Welcome</NavLink></li>
             <li><NavLink to="/Company">Company</NavLink></li>
             <li><NavLink to="/BankDetail">Bank Detail</NavLink></li>
             <li><NavLink to="/Department">Department</NavLink></li>
@@ -30,12 +32,10 @@ class Main extends Component {
             <li><NavLink to="/Supplier">Supplier</NavLink></li>
             <li><NavLink to="/CoverSheet">Cover sheet</NavLink></li>
             <li><NavLink to="/ViewCoverSheet">View Coversheet</NavLink></li>
-
-
-          </ul>
-          
-          <div className="content" style={{ width:'1100px', float:'right' }}>
-            <Route exact path="/" component={Home}/>
+          </ul>         
+          <div className="content" style={{ width:'1200px', float:'right' }}>
+            <Route exact path="/" component={Login}/>
+            <Route exact path="/Home" component={Home}/>
             <Route path="/Company" component={Company}/>
             <Route path="/BankDetail" component={BankDetail}/>
             <Route path="/Department" component={Department}/>

@@ -85,7 +85,6 @@ class Employee extends Component {
      e.target.lastname.value = '';
      e.target.position.value = 'Select Position';
      e.target.imagedataurl.value = '';
-     clear();
      e.preventDefault();
   };
   render() { 

@@ -55,7 +55,7 @@ class Company extends Component {
           <input type="text" placeholder="Enter Address" name="address" required/> <br/>
 
           <label htmlFor="psw-repeat"><b>Phone numbers</b></label> <br/>
-          <input type="text" placeholder="Enter Phone numbers" name="phones" required></input> <br/>
+          <input type="number" placeholder="Enter Phone numbers" name="phones" required></input> <br/>
 
 
           <div className="clearfix">

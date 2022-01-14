@@ -31,7 +31,7 @@ componentDidMount() {
           </tr>
           {this.state.coversheet.map((item, i) => (
             <tr key={i}>
-              <td>{item.coverSheetID}</td>
+              <td>{item.coverSheetNumber}</td>
               <td>{item.firstName}</td>
               <td>{item.lastName}</td>
               <td>{item.dateOfInvoce}</td>
