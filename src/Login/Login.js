@@ -1,33 +1,37 @@
 import React, { Component } from "react";
 import {SERVER_URL} from '../Constants/Constants';
+import { Redirect } from 'react-router-dom';
+import Main from "../Main";
+import $ from 'jquery';
+
 class Login extends Component {
     onFormSubmit(e) {
    
-    //     const empcode= e.target.username.value;
-    //     const pass= e.target.pass.value;
-    //     const myObject = {
-    //         employeeCode: empcode
-    //   };
+        const empcode= e.target.username.value;
+        const pass= e.target.pass.value;
+        const myObject = {
+            employeeCode: empcode
+      };
     
-    //   const requestOptions = {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(myObject)
-    //   };
-    //    fetch(SERVER_URL+'/Employee', requestOptions)
-    //     .then(response => {
-    //       if(response.status == 200){
-    //         notify.show('Employee Details saved successfully ', 'success');
-    //       }
-    //       else
-    //       {
-    //         notify.show('Failed to save Employee Details  : ' + response.status, 'error');
-    //       }
-    //     });
-    //     //clear form
-    //      e.target.pass.value = '';
-    //      e.target.username.value = '';
- 
+      const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(myObject)
+      };
+       fetch(SERVER_URL+'/Employee', requestOptions)
+        .then(response => {
+          if(response.status == 200){
+            notify.show('Employee Details saved successfully ', 'success');
+          }
+          else
+          {
+            notify.show('Failed to save Employee Details  : ' + response.status, 'error');
+          }
+        });
+        //clear form
+         e.target.pass.value = '';
+         e.target.username.value = '';
+
          e.preventDefault();
       };
   render() {
