@@ -23,8 +23,9 @@ class Main extends Component {
         <div id="test">
           <h2>Payment Processing Platform</h2>
           <ul className="header" style={{ width:'150px', float:'left' }}>
-            <li><NavLink exact to="/">Login</NavLink></li>
-            <li><NavLink to="/Home">Welcome</NavLink></li>
+            
+            <li><NavLink exact to="/">Welcome</NavLink></li>
+            <li><NavLink to="/Login">Login</NavLink></li>
             <li><NavLink to="/Company">Company</NavLink></li>
             <li><NavLink to="/BankDetail">Bank Detail</NavLink></li>
             <li><NavLink to="/Department">Department</NavLink></li>
@@ -34,8 +35,9 @@ class Main extends Component {
             <li><NavLink to="/ViewCoverSheet">View Coversheet</NavLink></li>
           </ul>         
           <div className="content" style={{ width:'1200px', float:'right' }}>
-            <Route exact path="/" component={Login}/>
-            <Route exact path="/Home" component={Home}/>
+           
+            <Route exact path="/" component={Home}/>
+            <Route exact path="/Login" component={Login}/>
             <Route path="/Company" component={Company}/>
             <Route path="/BankDetail" component={BankDetail}/>
             <Route path="/Department" component={Department}/>

@@ -57,9 +57,6 @@ HideFormcover = () => {
  ShowFormupload = () => {   
   $("#cover").css("display", "inherit");
  }
- createSignature = () => {   
- console.log(document.getElementById("myfile").value);
- }
 
  onFormSubmit(e) {
   const coversheetid= e.target.coversheetid.value;
@@ -195,7 +192,6 @@ e.target.invoicenumber.value= '';
        <h2>Upload Invoice Informaiton</h2>
       <br/><br/>
      <b><label htmlFor="myfile">Upload an Invoice:</label></b> <br/>
-     <button type="button" onClick={this.createSignature}>Create signature</button>
      
       <input type="file" id="myfile" name="myfile" />
       <br/> <br/>
